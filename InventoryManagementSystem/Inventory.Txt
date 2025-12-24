@@ -1,0 +1,6 @@
+///INVENTORY STATE///
+**INVENTORY ITEMS**
+Item{itemId=2, itemName='Plastic', type='Raw', price=5.0, quantity=6, minLimit=3}
+**INVENTORY PRODUCTS**
+Product{productId=1, productName='Car', items={Item{itemId=2, itemName='Plastic', type='Raw', price=5.0, quantity=6, minLimit=3}=2, Item{itemId=1, itemName='Steel', type='Raw', price=10.0, quantity=10, minLimit=5}=5}}
+Product{productId=1, productName='Car', items={Item{itemId=2, itemName='Plastic', type='Raw', price=5.0, quantity=6, minLimit=3}=2, Item{itemId=1, itemName='Steel', type='Raw', price=10.0, quantity=10, minLimit=5}=5}}

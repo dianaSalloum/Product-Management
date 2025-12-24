@@ -1,49 +1,40 @@
+import java.util.HashMap;
 import java.util.Map;
 
 public class Product {
-    private int productId;
+//automatically change the id
+/*creates a static variable and make it behave as a counter,
+so every time we create an object it will increase using the synchronized method below.
+ */
+    private static int productId=1;
+    private static synchronized int productId(){
+        return productId++;
+    }
+    private int id;
     private String productName;
     private Map<Item, Integer> items;
 
-    //CONSTRUCTOR
-    public Product(int productId, String productName, Map<Item, Integer> items) {
+    //constructor
+    public Product(String productName, Map<Item, Integer> items) {
         this.productName = productName;
-        this.productId = productId;
-        this.items = items;
+        this.id = productId();
+        this.items = new HashMap<>(items);
     }
 
-    //GETTERS
+    //getters
     public int getProductId() {
-        return productId;
-    }
-
-    public String getProductName() {
-        return productName;
+        return id;
     }
 
     public Map<Item, Integer> getItems() {
         return items;
     }
 
-    public int getAmountOfItemForProduct(Item item) {
-        return items.getOrDefault(item, 0);
-    }
-
-//SETTERS
-
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-
+    //toString
     @Override
     public String toString() {
         return "Product{" +
-                "productId=" + productId +
+                "productId=" + id +
                 ", productName='" + productName + '\'' +
                 ", items=" + items +
                 '}';
